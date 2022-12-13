@@ -12,8 +12,7 @@ def main():
     file_zp = sheet_ex_info['B2'].value
     file_on = sheet_ex_info['C2'].value
     # запись файла происходит дальше
-
-
+    
     # zp - документ, который ведёт менеджер
     book_zp = openpyxl.load_workbook(filename=file_zp, read_only=True, data_only=True)
     sheet_zp = book_zp.worksheets[-1]  # последняя страница файла из списка - 2022
@@ -25,8 +24,6 @@ def main():
     sheet_on = book_on.worksheets[0]
     func_on = (lambda row: all(c is None for c in row[1:7]))
     data_on = sheet_to_iter(sheet_on, func_on, exc=range(6))
-
-
 
     # запись данных в файл
     clear_sheet(book_ex, sheet_ex, name_ex)
@@ -40,7 +37,6 @@ def main():
     sheet_ex['E1'] = 'Сумма с НДС, р.'
     sheet_ex['F1'] = 'Дата оплаты факт'
     sheet_ex['G1'] = 'Маржа, р.'
-
     row_ex = 2 # потому что первую строку заполнил вручную
     for row_zp in data_zp:
         for row_on in data_on:
