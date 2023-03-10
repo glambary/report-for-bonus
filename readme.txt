@@ -27,5 +27,3 @@ To use please follow the following steps:
 	3) use the command pip freeze > requirements.txt.
 
 Unfortunately, I cannot download the zap.xlsx and data.xlsx files, because they contain trade secrets.
-
-Translated with www.DeepL.com/Translator (free version)
